@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @poll.question%></h1>
+<%=form_for @vote do |f|%>
+	<ul>
+		<p><%@poll.options.each.each do |option|%>
+		<%=radio_button_tag("option",option.id)%>
+		<%=option.name%>
+
+	</p>
+		<% end %>
+	</ul>
+	<%=f.submit "Vote"%>
+<% end %>
